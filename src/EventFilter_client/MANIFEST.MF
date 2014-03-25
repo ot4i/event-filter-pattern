@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pattern Authoring Extension Plug-in
+Bundle-SymbolicName: com.ibm.etools.mft.pattern.messaging.eventfilter.code;singleton:=true
+Bundle-Version: 9.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.ibm.etools.mft.broker.runtime;bundle-version="8.0.0",
+ com.ibm.broker.config.appdev;bundle-version="8.0.0",
+ com.ibm.msl.mapping.xml.ui;bundle-version="8.0.400",
+ com.ibm.etools.mft.ibmnodes;bundle-version="9.0.0",
+ com.ibm.etools.mft.xpath;bundle-version="9.0.0",
+ com.ibm.etools.mft.api;bundle-version="9.0.0"
+Export-Package: com.ibm.etools.mft.pattern.messaging.eventfilter.code
+Import-Package: org.eclipse.swt.widgets

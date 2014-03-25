@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>EventFilterPattern</name>
+	<comment></comment>
+	<projects>
+		<project>EventFilter</project>
+		<project>EventFilter_client</project>
+		<project>EventFilter_logs</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.etools.mft.pattern.capture.PatternBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.etools.mft.pattern.capture.ui.patternbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.etools.mft.patternauthoringnature</nature>
+	</natures>
+</projectDescription>

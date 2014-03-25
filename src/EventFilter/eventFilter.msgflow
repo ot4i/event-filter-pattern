@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmFileOutput.msgnode="ComIbmFileOutput.msgnode" xmlns:ComIbmJMSClientInput.msgnode="ComIbmJMSClientInput.msgnode" xmlns:ComIbmJMSMQTransform.msgnode="ComIbmJMSMQTransform.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmRoute.msgnode="ComIbmRoute.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:mqsi_Error.msgflow="mqsi/Error.msgflow" xmlns:patternAnnotation="http://www.ibm.com/patternAnnotation/2010"
+    xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="eventFilter.msgflow"
+    nsPrefix="eventFilter.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="eventFilter" bundleName="eventFilter" pluginId="EventFilter"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EventFilter/icons/full/obj16/eventFilter.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EventFilter/icons/full/obj30/eventFilter.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="475,375" queueName="EVENT.IN">
+        <translation xmi:type="utility:ConstantString" string="MQ Event Processing"/>
+      </nodes>
+      <nodes xmi:type="ComIbmJMSClientInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="28,275" topic="EventTopic" jmsProviderName="IBM_MessageSight" connectionFactoryName="connFactory1" messageDomainProperty="JSON">
+        <translation xmi:type="utility:ConstantString" string="EventSubscriber"/>
+      </nodes>
+      <nodes xmi:type="ComIbmJMSMQTransform.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="329,305">
+        <translation xmi:type="utility:ConstantString" string="JMS MQ Transform"/>
+      </nodes>
+      <nodes xmi:type="ComIbmRoute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="202,276">
+        <outTerminals terminalNodeID="Match" dynamic="true" label="Match"/>
+        <translation xmi:type="utility:ConstantString" string="Route"/>
+        <filterTable filterPattern="$Body/Data/event/type='alert'" routingOutputTerminal="Match"/>
+      </nodes>
+      <nodes xmi:type="ComIbmFileOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="506,281" outputDirectory="c:\temp" outputFilename="pacemaker.log" writeMode="writeInPlace" recordDefinition="asIs">
+        <translation xmi:type="utility:ConstantString" string="Log events"/>
+      </nodes>
+      <nodes xmi:type="mqsi_Error.msgflow:FCMComposite_1" xmi:id="FCMComposite_1_3" location="205,372">
+        <translation xmi:type="utility:ConstantString" string="Error"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_19" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_20" targetNode="FCMComposite_1_13" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_23" targetNode="FCMComposite_1_9" sourceNode="FCMComposite_1_13" sourceTerminalName="Match" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.Input"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard>
+      <stickyNote location="20,11">
+        <body xmi:type="utility:ConstantString" string=""/>
+      </stickyNote>
+    </stickyBoard>
+    <patternAnnotations>
+      <AnnotationTarget targetObjects="FCMComposite_1_2">
+        <PatternAnnotation xmi:type="patternAnnotation:PropertyPatternAnnotation" aliasId="FCMComposite_1_2.queueManagerName" targetObject="FCMComposite_1_2" targetPropertyId="queueManagerName"/>
+        <PatternAnnotation xmi:type="patternAnnotation:PropertyPatternAnnotation" aliasId="FCMComposite_1_2.queueName" targetObject="FCMComposite_1_2" targetPropertyId="queueName"/>
+      </AnnotationTarget>
+    </patternAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

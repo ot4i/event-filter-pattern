@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014 IBM Corporation and other Contributors
+ 
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+  Contributors:
+      IBM - initial implementation         
+-->
+<html lang="en">
+
+<title>Pacemaker Event Publisher</title>
+
+<style type="text/css">      
+      form.tabContent { border: 1px solid #c9c3ba; padding: 0.5em; background-color: #f1f0ee; }
+      form.tabContent { border: 1px solid #c9c3ba; padding: 0.5em; background-image:url('resources/heartbeat.jpg');background-color:#000000;background-position:right top;background-repeat: no-repeat; }
+      h1 {text-align:center;font-family:courier;color:#FF9999;background-color:black}
+      fieldset,legend {font-family:courier;color:white}
+      body{background-color:black}
+      textarea,select,input{background-color:#F0F0F0}
+      p{text-align:center;font-family:courier;color:#C80000;background-color:black}
+</style>
+<script type="text/javascript" src="resources/mqttws31.js"></script> 
+<script type="text/javascript">
+
+/** Websocket API. */
+var client;
+var connectOptions;
+
+function connect(form) {   
+    try {
+        client = new Messaging.Client(form.host.value, Number(form.port.value), form.clientId.value);
+    
+        client.startTrace();
+        client.onMessageArrived = onMessageArrived;
+        client.onConnectionLost = onConnectionLost;
+    
+        // Set values from the connect form.
+        var connectForm = document.getElementById('connect');
+        var connectOptions = new Object();
+        connectOptions.timeout=5;        
+        connectOptions.keepAliveInterval = 60;  
+        connectOptions.useSSL = false;
+        connectOptions.onSuccess = function (responseObject) {
+            connectForms();
+            log("Connected");
+        };
+        connectOptions.onFailure = function (responseObject) { alert(responseObject.errorMessage);};
+      
+        client.connect(connectOptions);
+            
+    } catch (error) {
+        alert(error.message);
+    }
+} 
+
+function disconnect() {
+	// The conectonLost callback is driven when the connection closes.
+	try {	  
+      client.disconnect();
+      log("Disconnected");
+	} catch (error) {
+        alert(error.message);
+    }  
+}
+
+function doSend(form) {
+	try {
+        if (form.textMessage.value == "") {
+            message = new Messaging.Message("");
+            
+        } else {
+            message = new Messaging.Message(form.textMessage.value);
+        }
+   
+        message.destinationName = form.topicName.value;
+        message.qos = 0;  
+        
+        client.send(message);
+                
+        log("Message Published");
+        
+	} catch (error) {
+        alert(error.message);
+    }
+}
+
+function log(message) {
+	var form = document.getElementById('connect');
+	var currenthist = form.hist.value;
+    var currenttime = new Date().toLocaleTimeString();
+    form.hist.value = currenttime+" "+message+"\n"+currenthist;
+}
+
+function updateMessage() {
+	var form = document.getElementById('connect');
+	var eventtype = form.eventtype.value;
+	
+	var detail;
+	
+	if (eventtype == "alert") {
+		detail = "Device Malfunction";
+	} else if (eventtype == "warning") {
+		detail = "Low Battery";	
+	} else {
+		detail = "Functioning normally";	
+	}
+	
+	form.textMessage.value = "{\n"+
+		"\"device\":{\"id\":\""+form.clientId.value+"\",\"type\":\"pacemaker\"},\n"+
+		"\"date\":\""+new Date().toLocaleDateString()+"\",\n"+
+		"\"time\":\""+new Date().toLocaleTimeString()+"\",\n"+
+		"\"event\":{\"type\":\""+eventtype+"\",\"detail\":\""+detail+"\"}\n"+
+		"}\n";
+}
+/**
+ * Websockets API callbacks.
+ */
+
+function onConnectionLost(responseObject) {
+    var form = document.getElementById('connect');
+    disconnectForms();
+    if (responseObject.errorCode !== 0)
+      alert(client.clientId+" disconnected error code="+responseObject.errorCode+" reason="+responseObject.errorMessage);
+}
+
+function onMessageArrived(message) {
+}
+
+/**
+ * HTML Application logic.
+ */
+function onLoad() {
+    disconnectForms();
+    var form = document.getElementById("connect");    
+    form.clientId.value = "Pacemaker"+new Date().getSeconds()+new Date().getMilliseconds();
+    form.topicName.value = "/PACEMAKER/"+form.clientId.value;
+    form.host.value = "127.0.0.1";
+    form.port.value = 8080; 
+    updateMessage();
+}
+
+// On connection
+function connectForms() {  
+    var form = document.getElementById('connect');
+    form.host.disabled = "true"; 
+    form.port.disabled = "true";  
+    form.clientId.disabled = "true";
+    form.conn.disabled = "true";
+    form.disc.disabled = "";
+        
+    form.topicName.disabled = "";
+    form.textMessage.disabled = "";
+    form.sendButton.disabled = "";        
+}
+
+// On disconnection and on page load
+function disconnectForms() {  
+    var form = document.getElementById("connect"); 
+    form.host.disabled = ""; 
+    form.port.disabled = "";  
+    form.clientId.disabled = "";
+    form.conn.disabled = "";
+    form.disc.disabled = "true";
+    
+    form.topicName.disabled = "true";
+    form.textMessage.disabled = "true";
+    form.sendButton.disabled = "true";
+}
+
+function clearLog(form) {
+	form.hist.value="";	
+}
+
+function onUnload() {
+   // Do not do a normal disconnection of the client if the browser window is closed, 
+   // just let the connection fail, abnormally, any LastWill and Testament processing 
+   // will then take place. 
+   // if (client && client.isConnected)
+   //   client.disconnect();
+}
+
+</script>
+<h1>Pacemaker Event Publisher</h1>
+<p>This client represents a pacemaker that publishes status events to an event gateway.</p>
+</head>
+
+<body onload="onLoad()" onunload="onUnload()">
+
+<span id="basicAnchor" style="position:fixed; display:none"></span>
+<form id="connect" class="tabContent">
+<fieldset>
+<legend>Connection to event gateway endpoint</legend>
+<br/>
+Server <input type="text" name="host" size="30"/>
+Port <input type="text" name="port" size="5" maxlength="5"/>
+<br/>
+<input type="hidden" name="clientId"  size="23" maxlength="23" value="Pacemaker"/>
+<br/>
+<br/> 
+<input type="button" value="Connect" onclick="connect(this.form)" name="conn"/> 
+<input type="button" value="Disconnect" onclick="disconnect()" name="disc"/>
+<br/>
+<br/>
+</fieldset>
+
+<fieldset>
+<legend>Publish to event gateway</legend>
+<br/>
+<div id="basicSendTopic">
+Topic
+<input type="text" name="topicName" size="40">
+Event Type
+<select name="eventtype" onchange="updateMessage()">
+<option value="information">Information</option>
+<option value="warning">Warning</option>
+<option value="alert">Alert</option>
+</select>
+</div>
+<br/>
+Message 
+<br/>
+<textarea name="textMessage" rows="8" cols="80">
+</textarea> 
+<br/>
+<br/>
+<input type="button" value="Publish" onClick="doSend(this.form)" name="sendButton"/>
+</fieldset>
+
+<fieldset>
+<legend>Log</legend>
+<textarea name="hist" rows="5" cols="80" readonly="readonly" >
+</textarea>
+<input type="button" value="Clear Log" onClick="clearLog(this.form)" name="clearButton"/>
+</fieldset>
+</form>
+
+</body>
+
+</html>
