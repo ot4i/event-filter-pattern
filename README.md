@@ -1,4 +1,4 @@
 event-filter-pattern
 ====================
 
-content based filtering for events
+content based filtering for events received from IBM MessageSight
