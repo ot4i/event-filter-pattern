@@ -4,28 +4,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="copyright" content="Copyright IBM Corporation 2012"/>
     <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
-    <!--
-Copyright (c) 2014 IBM Corporation and other Contributors
- 
-  All rights reserved. This program and the accompanying materials
-  are made available under the terms of the Eclipse Public License v1.0
-  which accompanies this distribution, and is available at
-  http://www.eclipse.org/legal/epl-v10.html
- 
-  Contributors:
-      IBM - initial implementation         
--->
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
     <title>Tasks to complete before applying the IBM MessageSight Inbound Event Filter pattern</title>
 </head>
 <body>
     <h1 class="topictitle1">Tasks to complete before applying the <span>IBM MessageSight Inbound Event Filter</span> pattern</h1>
     <div class="p">
         <p class="shortdesc">Before applying the pattern to produce a pattern instance, complete
-        one or more of the following tasks, if required:<br/></p>
+        the following steps:<br/></p>
         <ul>
-        	<li>Copy the IBM MessageSight client jars files to your IBM Integration Bus machine.</li>
-        	<li>Update the IBM MessageSight configurable service to set the location of the client jar files.  This is achieved by running the following command:</li>
-        	<code>mqsichangeproperties &lt;node_name&gt; -c JMSProviders -o IBM_MessageSight -n jarsURL -v &lt;client_jar_location&gt;</code>
+        	<li>Copy the IBM MessageSight client JAR files to your IBM Integration Bus machine.</li>
+        	<li>Update the IBM MessageSight configurable service with the location of the IBM MessageSight 
+        	client JAR files by running the following command in an IBM Integration Console window:
+        	<p><pre>mqsichangeproperties <var>node_name</var> -c JMSProviders 
+        	-o IBM_MessageSight -n jarsURL -v <var>client_jar_location</var></pre>
+        	</p>
+        	<p> where <var>node_name</var> is your integration node (broker) name (for example, 
+        	<span class="filepath">IB9NODE</span>) and <var>client_jar_location</var> is the path to your 
+        	IBM MessageSight client JAR files (for example, <span class="filepath">C:\ImaClient\jms\lib</span>).
+        	</p>
+        	</li>
+        	<li>Restart the integration node.</li>
         </ul>
     </div>
 	<p>
