@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!--
+Copyright (c) 2014 IBM Corporation and other Contributors
+ 
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+  Contributors:
+      IBM - initial implementation         
+-->
+    <title>Tasks to complete after applying the IBM MessageSight Inbound Event Filter pattern</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tasks to complete after generating the <span>IBM MessageSight Inbound Event Filter</span> pattern</h1>
+    <p class="shortdesc">Tasks that you must complete after you have generated the pattern.<br/></p>
+
+	<p>If you plan to run the generated application on a remote integration node:<br/></p>
+    <ul>
+    	<li>Using the navigator view, copy the generated <code>.bindings</code> file from the <code>&lt;pattern_name&gt;_EventFilter</code> project to your IBM Integration Bus machine.</li>
+    	<li>In the generated message flow, navigate to the <code>Event Subscriber</code> JMS Input node properties. On the <code>JMS Connection</code> tab, update the <code>Location JNDI Bindings</code> property to the location of the <code>.bindings</code> file</li>
+    </ul>
+    <br/>
+    <p>In all cases<br/></p>
+    <ul>
+    	<li>Deploy the generated application <code>&lt;pattern_name&gt;_EventFilter</code> to your integration node.</li>
+    	<li>From the <code>&lt;pattern_name&gt;_EventFilter_client</code> project open <code>PacemakerClient.html</code> in an HTML5 enabled browser.</li>
+    	<li>From the browser connect the MessageSight Endpoint and publish different event types,</li>
+    	<li>Check the log file and MQ queue for the filtered and unfiltered events.</li>
+    </ul>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="Back">Back to the IBM MessageSight Inbound Event Filter pattern specification</a>
+    </p>
+</body>
+</html>
+
