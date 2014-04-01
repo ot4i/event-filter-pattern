@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.ibm.etools.mft.pattern.messaging.eventfilter.doc" name="%Plugin.name" version="9.0.0.qualifier" provider-name="IBM">
+    <extension point="org.eclipse.help.toc">
+        <toc file="toc.xml" primary="false"/>
+    </extension>
+</plugin>

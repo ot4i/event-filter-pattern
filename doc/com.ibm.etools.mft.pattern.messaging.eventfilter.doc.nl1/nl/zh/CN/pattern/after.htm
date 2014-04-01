@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>应用 IBM MessageSight Inbound Event Filter 模式之后要完成的任务</title>
+</head>
+<body>
+    <h1 class="topictitle1">生成 <span>IBM MessageSight Inbound Event Filter</span> 模式之后要完成的任务</h1>
+    <p class="shortdesc">生成该模式之后必须完成的任务。<br/></p>
+    <p>生成 IBM MessageSight Inbound Event Filter 模式实例之后，完成下列步骤：</p>
+
+	<ol>
+	<li>打开 eventFilter 消息流，找到为了配置 IBM MessageSight 端点必须运行的已生成命令。在 IBM MessageSight 机器上运行这些命令。</li>
+	<li><b>可选：</b>如果要在远程集成节点（代理）上运行生成的应用程序，完成下列步骤：<br/>
+	<ol>
+    	<li>使用导航器视图，将生成的 <span class="filepath">.bindings</span> 文件从 <var>YourPatternInstanceName</var>_EventFilter 项目复制到 IBM Integration Bus 机器。</li>
+    	<li>在生成的消息流中，导航至事件订户 JMS 输入节点属性。在“JMS 连接”选项卡上，用 <span class="filepath">.bindings</span> 文件的位置更新<span class="uicontrol">位置 JNDI 绑定</span>属性。</li>
+    </ol></li>
+    <li>创建队列管理器、您指定用于所过滤事件的队列和您指定用于错误处理的队列（如果它们尚不存在）。</li>
+    <li>将生成的应用程序 <var>YourPatternInstanceName</var>_EventFilter 部署到集成节点。</li>
+    </ol>
+    <p>如果在配置模式实例时接受了参数的缺省值，可以使用下列步骤来测试生成的应用程序：</p>
+    <ol>
+    <li>从应用程序开发导航器，在启用 HTML5 的浏览器中打开<span class="uicontrol">独立资源 > <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span>。</li>
+    <li>在浏览器页面中，单击<span class="uicontrol">连接</span>以连接到 IBM MessageSight 端点。</li>
+    <li>从<span class="uicontrol">事件类型</span>字段选择<span class="uicontrol">警报</span>并单击<span class="uicontrol">发布</span>，以向 IBM Integration Bus 发送警报事件消息。</li>
+    <li>将上一步重复若干次，但是从<span class="uicontrol">事件类型</span>字段选择不同的值。</li>
+    <li>检查 MQ 队列以确保警报事件消息（且只有警报事件消息）在队列中。</li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="返回">返回至 IBM MessageSight Inbound Event Filter 模式规范</a>
+    </p>
+</body>
+</html>
+
+

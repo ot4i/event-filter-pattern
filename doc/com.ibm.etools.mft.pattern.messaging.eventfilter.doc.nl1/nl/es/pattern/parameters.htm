@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+	<!--
+		(c) Copyright IBM Corporation 2009, 2011. All rights reserved.
+		All Rights Reserved * Licensed Materials - Property of IBM 
+	-->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="abstract" content="Tablas que contienen los detalles de los parámetros de patrón para el patrón Filtro de sucesos "/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../css/general.css"/>
+	<title>Parámetros de patrón para el patrón Filtro de sucesos</title>	
+	<script language="JavaScript" src="../help/actions.js"></script>
+	
+	<!-- START NON-TRANSLATABLE -->
+	<script language="JavaScript">
+	<!--
+
+	function getParameter(location, name) {
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var search = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(search);
+		var results = regex.exec(location);
+		return (results == null ? true : (results[1] == "false" ? false : true));
+	}
+	
+	function addStyleSheet() {
+		if (getParameter(window.location.href, "everything") == false) {
+			var headId = document.getElementsByTagName("head")[0];         
+			var cssNode = document.createElement("link");
+			cssNode.type = "text/css";
+			cssNode.rel = "stylesheet";
+			cssNode.href = "../css/patterns.css";
+			cssNode.media = "screen";
+			headId.appendChild(cssNode);
+		}
+	}
+		
+	addStyleSheet(); // Depends on the query string!
+	
+	function getElementsByStyleClass (className) {
+  		var all = document.all ? document.all :
+    	document.getElementsByTagName('*');
+  		var elements = new Array();
+  		
+  		for (var e = 0; e < all.length; e++) {
+    		if (all[e].className == className) {
+      			elements[elements.length] = all[e];
+      		}
+      	}
+ 		return elements;
+	}
+	
+	function collapseAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.COLLAPSEALL');
+		}
+	}
+	
+	function expandAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.EXPANDALL');
+		}
+	}
+	
+	function toggleTwisty(group) {
+		changeTwisty(group, 'TWISTIE.TOGGLE');
+	}
+
+	function changeTwisty(group, mode) {		
+		whichGroupId = group.parentNode.id;
+
+		whichGroupContainerId = whichGroupId + "Container";
+		whichGroupTwistyId = whichGroupId + "Twisty";
+		whichGroupTwistyImageId = whichGroupId + "Arrow";
+		groupContainerObj = document.getElementById(whichGroupContainerId);
+		twistyArrowContainerObj = document.getElementById(whichGroupTwistyId);
+		twistyArrowImageObj = document.getElementById(whichGroupTwistyImageId);
+		group.parentNode.style.height = "auto";
+
+		var toShow = false;
+		
+		if (mode == 'TWISTIE.TOGGLE') {
+			if (groupContainerObj.style.display == "none" || groupContainerObj.style.display == "") {
+				toShow = true;
+			} else {
+				toShow = false;
+			}
+		} else if (mode == 'TWISTIE.EXPANDALL') {
+			toShow = true;
+		}
+		
+		if (toShow) {
+			groupContainerObj.style.visibility = "visible";
+			groupContainerObj.style.display = "block";
+			twistyArrowImageObj.src = '../images/twistyopen.png'
+			group.parentNode.style.height = (groupContainerObj.offsetHeight + 30) +'px'; 
+	
+		} else {
+			groupContainerObj.style.visibility = "hidden";
+			groupContainerObj.style.display = "none";
+			twistyArrowImageObj.src = '../images/twistyclosed.png'
+		}
+	
+	}
+	//-->
+	</script>
+	<!-- END NON-TRANSLATABLE -->
+</head>
+<body id="com.ibm.etools.mft.pattern.messaging.eventfilter.pattern.parametertable">
+	<!-- Page main title -->
+  	<div id="title" class="invisible">
+		<h1 class="patterns-title">Parámetros para el patrón <span>Filtro
+de sucesos</span>  </h1>
+  	</div>
+
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d81cb284bf6c95b4094089c5c">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d81cb284bf6c95b4094089c5cTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d81cb284bf6c95b4094089c5cArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Configuración
+de punto final de IBM
+MessageSight </div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d81cb284bf6c95b4094089c5cContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">
+Predeterminado</th>
+													  <th valign="top" width="*">Descripción
+</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Servidor
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>El nombre de host o dirección IP del servidor de
+IBM
+MessageSight </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Puerto
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>El número de puerto del punto final de IBM
+MessageSight </p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d6e41b3c4f3f4080c486866a6">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d6e41b3c4f3f4080c486866a6Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d6e41b3c4f3f4080c486866a6Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Filtrado de eventos</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d6e41b3c4f3f4080c486866a6Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">
+Predeterminado</th>
+													  <th valign="top" width="*">Descripción
+</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Tema
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				/PACEMAKER/#
+															</td>
+															<td valign="top" width="*">
+																<p>El tema utilizado por el flujo para suscribirse a
+los mensajes de
+entrada </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Filtro
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				contains($Body/Data/event/type,"alert")
+															</td>
+															<td valign="top" width="*">
+																<p>Un valor de XPath utilizado para filtrar los
+mensajes de entrada </p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d7de999a6ab5c9fa17d2f4e22">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d7de999a6ab5c9fa17d2f4e22Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d7de999a6ab5c9fa17d2f4e22Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">
+Salida de sucesos filtrados </div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d7de999a6ab5c9fa17d2f4e22Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">
+Predeterminado</th>
+													  <th valign="top" width="*">Descripción
+</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+Nombre del gestor de colas </th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>El gestor de colas utilizado para almacenar mensajes
+filtrados </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+Nombre de cola</th>
+															<td valign="top" width="2*" class="invisible">
+																				EVENT.IN
+															</td>
+															<td valign="top" width="*">
+																<p>La cola utilizada para almacenar mensajes
+filtrados </p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d91dcf39980050fbd6e510e9a">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d91dcf39980050fbd6e510e9aTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d91dcf39980050fbd6e510e9aArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">Manejo de errores</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d91dcf39980050fbd6e510e9aContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">Parámetro de patrón</th>
+													  <th class="invisible" valign="top" width="*">
+Predeterminado</th>
+													  <th valign="top" width="*">Descripción
+</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Mensaje de error necesario
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				Seleccionado
+															</td>
+															<td valign="top" width="*">
+																<p>Especifica si un mensaje de error es necesario si
+se produce un error en el flujo </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																Gestor de colas de errores
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>El gestor de colas utilizado para almacenar mensajes
+de error </p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+Cola de errores </th>
+															<td valign="top" width="2*" class="invisible">
+																				ERROR
+															</td>
+															<td valign="top" width="*">
+																<p>La cola utilizada para almacenar mensajes de error </p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	<div id="footnotes" class="invisible">
+		<div class="box first">
+			<div class="TitleBox"><!-- --></div>
+			<div class="FooterBox"><!-- --></div>
+			<div class="TL"><!-- --></div>
+			<div class="TR"><!-- --></div>
+			<div class="BL"><!-- --></div>
+			<div class="BR"><!-- --></div>
+			<div class="ContentBox">
+				<div class="invisible" >
+					<p class="shortdesc">Todos los parámetros de patrón aparecen en la lista con sus valores predeterminados.
+					Cuando no se indique un valor predeterminado, éste es una serie vacía.</p>
+				</div>
+<a href="overview.htm#anchorBack" title="Volver">Volver a
+la especificación del patrón Filtro de sucesos</a> <p></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

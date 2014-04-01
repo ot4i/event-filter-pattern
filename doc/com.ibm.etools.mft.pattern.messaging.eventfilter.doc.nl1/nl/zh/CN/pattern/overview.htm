@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>模式规范</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">IBM MessageSight Inbound Event Filter 模式</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>此模式使用 IBM Integration Bus 从移动式客户机通过 IBM MessageSight 接收事件，根据指定条件过滤事件，并将符合条件的事件转发到后端系统。</p>
+
+		<p>在符合以下条件的情况下使用此模式：</p>
+		<ul>
+		<li>大量移动式客户机通过 IBM MessageSight 发布消息。</li>
+		<li>发布的消息只有一部分需要后端系统处理。</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">解决方案</h2>
+        </div>
+        
+		<p>如果有大量客户机通过 IBM MessageSight 发布消息，为每条消息都启用业务处理可能使后端系统超负荷。如果使用 IBM MessageSight Inbound Event Filter 模式，就只有符合指定条件的消息会转发到后端系统进行业务处理。可以记录或废弃不符合条件的消息。</p>
+		<p>例如，医学设备（起搏器监测仪等）可能不断发布关于患者和设备的状态的事件消息。可以记录包含常规状态更新的事件消息，并将包含高严重性警报的事件消息转发到业务处理系统。</p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="IBM MessageSight IBM Integration Bus 集成图。"/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">相关任务</h2>
+			</div>
+			<p>请阅读以下部分以获取有关如何应用和使用此模式的信息。</p>
+		</div>
+		<div>
+			<a href="constraints.htm">有关使用模式的约束</a>
+		</div>
+		<div>
+			<a href="before.htm">应用模式前要完成的任务</a>
+		</div>
+		<div>
+			<a href="parameters.htm">模式参数</a>
+		</div>
+		<div>
+			<a href="after.htm">生成模式后要生成的任务</a>
+		</div>
+    </body>
+</html>

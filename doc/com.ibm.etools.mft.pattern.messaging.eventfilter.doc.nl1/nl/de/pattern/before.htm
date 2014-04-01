@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-de" xml:lang="de-de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tasks, die vor der Anwendung des Musters 'IBM MessageSight Inbound Event Filter' ausgeführt werden müssen</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tasks, die vor der Anwendung des Musters <span>IBM MessageSight Inbound Event Filter</span> ausgeführt werden müssen</h1>
+    <div class="p">
+        <p class="shortdesc">Bevor Sie das Muster anwenden, um eine Musterinstanz zu erstellen,
+müssen Sie die folgenden Schritte ausführen:<br/></p>
+        <ul>
+        	<li>Kopieren Sie die IBM MessageSight-Client-JAR-Dateien auf Ihre IBM Integration Bus-Maschine.</li>
+        	<li>Aktualisieren Sie den konfigurierbaren IBM MessageSight-Service mit der Speicherposition der IBM MessageSight-Client-JAR-Dateien, indem Sie folgenden Befehl in einem IBM Integration Console-Fenster ausführen:
+<p><pre>mqsichangeproperties <var>Knotenname</var> -c JMSProviders
+        	-o IBM_MessageSight -n jarsURL -v <var>Client-JAR-Position</var></pre>
+        	</p>
+        	<p> Dabei steht <var>Knotenname</var> für den Namen Ihres Integrationsknotens (Brokers) (zum Beispiel <span class="filepath">IB9NODE</span>). <var>Client-JAR-Position</var> ist der Pfad Ihrer IBM MessageSight-Client-JAR-Dateien (zum Beispiel <span class="filepath">C:\ImaClient\jms\lib</span>).
+        	</p>
+        	</li>
+        	<li>Starten Sie den Integrationsknoten erneut.</li>
+        </ul>
+    </div>
+	<p>
+        <a href="overview.htm#anchor1" title="Zurück">Zurück zur Spezifikation des Musters 'IBM MessageSight Inbound Event Filter'</a>
+    </p>
+</body>
+</html>

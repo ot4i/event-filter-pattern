@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw" xml:lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>套用 IBM MessageSight Inbound Event Filter 型樣之後要完成的作業</title>
+</head>
+<body>
+    <h1 class="topictitle1">產生 <span>IBM MessageSight Inbound Event Filter</span> 型樣之後要完成的作業</h1>
+    <p class="shortdesc">在您產生此型樣之後必須完成的作業。<br/></p>
+    <p>產生 IBM MessageSight Inbound Event Filter 型樣實例之後，請完成下列步驟：</p>
+
+	<ol>
+	<li>開啟 eventFilter 訊息流程，確定產生的指令，這些指令必須執行用來配置 IBM MessageSight 端點。在 IBM MessageSight 機器上執行這些指令。</li>
+	<li><b>選用項目：</b>如果要在遠端整合節點（分配管理系統）上執行產生的應用程式，請完成下列步驟：<br/>
+	<ol>
+    	<li>使用導覽器視圖將產生的 <span class="filepath">.bindings</span> 檔從 <var>YourPatternInstanceName</var>_EventFilter 專案複製到 IBM Integration Bus 機器。</li>
+    	<li>在產生的訊息流程中，導覽至「事件訂閱者 JMS 輸入節點」內容。
+    	在「JMS 連線」標籤上，將<span class="uicontrol">位置 JNDI 連結</span>內容更新為 <span class="filepath">.bindings</span> 檔的位置。</li>
+    </ol></li>
+    <li>建立佇列管理程式，指定用於過濾事件的佇列，以及指定用於錯誤處理的佇列（如尚未存在）。</li>
+    <li>將產生的應用程式 <var>YourPatternInstanceName</var>_EventFilter 部署至整合節點。</li>
+    </ol>
+    <p>如果在配置型樣實例時接受參數的預設值，則可以使用下列步驟來測試產生的應用程式：</p>
+    <ol>
+    <li>在支援 HTML5 的瀏覽器中，從「應用程式開發」導覽器，開啟<span class="uicontrol">獨立資源 > <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span>。</li>
+    <li>在瀏覽器頁面中，按一下<span class="uicontrol">連接</span>以連接 IBM MessageSight 端點。</li>
+    <li>傳送警示事件訊息給 IBM Integration Bus，方法是從<span class="uicontrol">事件類型</span>欄位選取<span class="uicontrol">警示</span>，然後按一下<span class="uicontrol">發佈</span>。</li>
+    <li>重複前幾個步驟數次，但從<span class="uicontrol">事件類型</span>欄位選取不同的值。</li>
+    <li>檢查 MQ 佇列，以確保佇列中有警示事件訊息（且只有警示事件訊息）。</li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="上一步">回到 IBM MessageSight Inbound Event Filter 型樣規格</a>
+    </p>
+</body>
+</html>
+
+

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.2
+Created-By: jvmwi3260sr9-20110203_74623 (IBM Corporation)
+Bundle-Vendor: IBM
+Fragment-Host: com.ibm.etools.mft.pattern.messaging.eventfilter.doc;bundle-version="10.0.0.qualifier"
+Bundle-Name: NL1 Fragment
+Bundle-SymbolicName: com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1
+Bundle-Version: 10.0.0.qualifier
+Bundle-ManifestVersion: 2
+

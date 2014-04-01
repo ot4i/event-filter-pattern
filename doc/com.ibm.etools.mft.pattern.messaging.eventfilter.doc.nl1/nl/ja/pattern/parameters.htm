@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+	<!--
+		(c) Copyright IBM Corporation 2009, 2011. All rights reserved.
+		All Rights Reserved * Licensed Materials - Property of IBM 
+	-->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="abstract" content="「イベント・フィルター」パターン用のパターン・パラメーターの詳細を示す表"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../css/general.css"/>
+	<title>「イベント・フィルター」パターン用のパターン・パラメーター</title>	
+	<script language="JavaScript" src="../help/actions.js"></script>
+	
+	<!-- START NON-TRANSLATABLE -->
+	<script language="JavaScript">
+	<!--
+
+	function getParameter(location, name) {
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var search = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(search);
+		var results = regex.exec(location);
+		return (results == null ? true : (results[1] == "false" ? false : true));
+	}
+	
+	function addStyleSheet() {
+		if (getParameter(window.location.href, "everything") == false) {
+			var headId = document.getElementsByTagName("head")[0];         
+			var cssNode = document.createElement("link");
+			cssNode.type = "text/css";
+			cssNode.rel = "stylesheet";
+			cssNode.href = "../css/patterns.css";
+			cssNode.media = "screen";
+			headId.appendChild(cssNode);
+		}
+	}
+		
+	addStyleSheet(); // Depends on the query string!
+	
+	function getElementsByStyleClass (className) {
+  		var all = document.all ? document.all :
+    	document.getElementsByTagName('*');
+  		var elements = new Array();
+  		
+  		for (var e = 0; e < all.length; e++) {
+    		if (all[e].className == className) {
+      			elements[elements.length] = all[e];
+      		}
+      	}
+ 		return elements;
+	}
+	
+	function collapseAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.COLLAPSEALL');
+		}
+	}
+	
+	function expandAll() {
+		var elements = getElementsByStyleClass('twisty');
+		for (var e = 0; e < elements.length; e++) {
+			changeTwisty(elements[e], 'TWISTIE.EXPANDALL');
+		}
+	}
+	
+	function toggleTwisty(group) {
+		changeTwisty(group, 'TWISTIE.TOGGLE');
+	}
+
+	function changeTwisty(group, mode) {		
+		whichGroupId = group.parentNode.id;
+
+		whichGroupContainerId = whichGroupId + "Container";
+		whichGroupTwistyId = whichGroupId + "Twisty";
+		whichGroupTwistyImageId = whichGroupId + "Arrow";
+		groupContainerObj = document.getElementById(whichGroupContainerId);
+		twistyArrowContainerObj = document.getElementById(whichGroupTwistyId);
+		twistyArrowImageObj = document.getElementById(whichGroupTwistyImageId);
+		group.parentNode.style.height = "auto";
+
+		var toShow = false;
+		
+		if (mode == 'TWISTIE.TOGGLE') {
+			if (groupContainerObj.style.display == "none" || groupContainerObj.style.display == "") {
+				toShow = true;
+			} else {
+				toShow = false;
+			}
+		} else if (mode == 'TWISTIE.EXPANDALL') {
+			toShow = true;
+		}
+		
+		if (toShow) {
+			groupContainerObj.style.visibility = "visible";
+			groupContainerObj.style.display = "block";
+			twistyArrowImageObj.src = '../images/twistyopen.png'
+			group.parentNode.style.height = (groupContainerObj.offsetHeight + 30) +'px'; 
+	
+		} else {
+			groupContainerObj.style.visibility = "hidden";
+			groupContainerObj.style.display = "none";
+			twistyArrowImageObj.src = '../images/twistyclosed.png'
+		}
+	
+	}
+	//-->
+	</script>
+	<!-- END NON-TRANSLATABLE -->
+</head>
+<body id="com.ibm.etools.mft.pattern.messaging.eventfilter.pattern.parametertable">
+	<!-- Page main title -->
+  	<div id="title" class="invisible">
+		<h1 class="patterns-title"><span>「イベント・フィルター」</span>パターンのパラメーター</h1>
+  	</div>
+
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d81cb284bf6c95b4094089c5c">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d81cb284bf6c95b4094089c5cTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d81cb284bf6c95b4094089c5cArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">IBM MessageSight エンドポイント構成</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d81cb284bf6c95b4094089c5cContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																サーバー
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>IBM MessageSight サーバーのホスト名または IP アドレス</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																ポート
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>IBM MessageSight エンドポイントのポート番号</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d6e41b3c4f3f4080c486866a6">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d6e41b3c4f3f4080c486866a6Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d6e41b3c4f3f4080c486866a6Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">イベントのフィルタリング</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d6e41b3c4f3f4080c486866a6Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																トピック
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				/PACEMAKER/#
+															</td>
+															<td valign="top" width="*">
+																<p>インバウンド・メッセージのサブスクライブ用にフローで使用されるトピック</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																フィルター
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				contains($Body/Data/event/type,"alert")
+															</td>
+															<td valign="top" width="*">
+																<p>インバウンド・メッセージのフィルター操作に使われる XPath 値</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+
+			
+
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d7de999a6ab5c9fa17d2f4e22">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d7de999a6ab5c9fa17d2f4e22Twisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d7de999a6ab5c9fa17d2f4e22Arrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">フィルター操作されたイベント出力</div>
+							
+							
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d7de999a6ab5c9fa17d2f4e22Container">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																キュー・マネージャー名
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>フィルター操作されたメッセージの保管に使われるキュー・マネージャー</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																キュー名
+															</th>
+															<td valign="top" width="2*" class="invisible">
+																				EVENT.IN
+															</td>
+															<td valign="top" width="*">
+																<p>フィルター操作されたメッセージの保管に使われるキュー</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	
+		
+			
+	
+			<div class="box first">
+				<div class="TitleBox"><!-- --></div>
+				<div class="FooterBox"><!-- --></div>
+				<div class="TL"><!-- --></div>
+				<div class="TR"><!-- --></div>
+				<div class="BL"><!-- --></div>
+				<div class="BR"><!-- --></div>
+				<div class="ContentBox">
+					<div class="border">
+						<div class="groupBox" id="Id13d91dcf39980050fbd6e510e9a">
+							<div class="twisty" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" role="menubar" id="Id13d91dcf39980050fbd6e510e9aTwisty">
+								<img src="../images/twistyclosed.png"
+									name="b" id="Id13d91dcf39980050fbd6e510e9aArrow" alt=""></img>
+							</div>
+							<div class="twistyTitle" onmouseup="toggleTwisty(this)" onkeyup="toggleTwisty(this)" tabindex="0" role="menubar">エラー
+処理
+</div>
+							
+							
+
+									
+
+									
+
+									
+							
+							<div style="visibility: hidden; display: none;" class="groupBoxContainer" id="Id13d91dcf39980050fbd6e510e9aContainer">
+									<div class="tablenoborder">
+										<table summary="" width="100%" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+											<thead align="left">
+												<tr>
+													  <th class="firstcol" align="left" valign="top" width="*">パターン・パラメーター</th>
+													  <th class="invisible" valign="top" width="*">デフォルト
+</th>
+													  <th valign="top" width="*">説明</th>
+												</tr>
+											</thead>
+											<tbody>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+必要なエラー・メッセージ
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				選択済み
+															</td>
+															<td valign="top" width="*">
+																<p>フローでエラーが発生した場合にエラー・メッセージが必要であるかどうかを指定します</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+エラー・キュー・マネージャー
+</th>
+															<td valign="top" width="2*" class="invisible">
+																				
+															</td>
+															<td valign="top" width="*">
+																<p>エラー・メッセージの保管に使われるキュー・マネージャー</p>
+															</td>
+														</tr>
+
+														<tr>
+															<th align="left" valign="top" width="*" class="firstcol">
+																エラー・キュー
+															</th>
+															<td valign="top" width="2*" class="invisible">
+ERROR
+</td>
+															<td valign="top" width="*">
+																<p>エラー・メッセージの保管に使われるキュー</p>
+															</td>
+														</tr>
+											</tbody>
+										</table>
+								  	</div>
+								
+
+
+
+						  	</div>
+				  		</div>
+			  		</div>
+				</div>
+			</div>
+
+	<div id="footnotes" class="invisible">
+		<div class="box first">
+			<div class="TitleBox"><!-- --></div>
+			<div class="FooterBox"><!-- --></div>
+			<div class="TL"><!-- --></div>
+			<div class="TR"><!-- --></div>
+			<div class="BL"><!-- --></div>
+			<div class="BR"><!-- --></div>
+			<div class="ContentBox">
+				<div class="invisible" >
+					<p class="shortdesc">すべてのパターン・パラメーターとそのデフォルト値をリストします。
+デフォルトが示されていない場合、デフォルト値は空ストリングです。</p>
+				</div>
+				<a href="overview.htm#anchorBack" title="戻る">「イベント・フィルター」パターンの仕様に戻る</a>
+				<p></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

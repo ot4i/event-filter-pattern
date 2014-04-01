@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="es-es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>Especificación de patrón</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Patrón
+Filtro de sucesos de entrada de IBM MessageSight </h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Este patrón utiliza IBM Integration Bus para recibir
+sucesos de clientes móviles a través de IBM MessageSight, filtrar los
+sucesos basándose en criterios especificados y reenviar sucesos que
+coincidan con los criterios a un sistema de fondo. </p>
+
+		<p>Utilice este patrón cuando las condiciones siguientes sean
+verdaderas: </p>
+		<ul>
+		<li>Grandes números de clientes móviles están publicando mensajes a
+través de IBM MessageSight. </li>
+		<li>Sólo un subconjunto de los mensajes que se publican requieren
+proceso por un sistema de fondo. </li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">Solución</h2>
+        </div>
+        
+		<p>Si hay un gran volumen de clientes que publican mensajes a
+través de IBM MessageSight, habilitar el proceso de negocio para
+cada mensaje podría sobrecargar los sistemas de fondo. Mediante el
+patrón Filtro de sucesos de entrada de IBM MessageSight,
+sólo los mensajes que coincidan con los criterios especificados se reenviarán a
+los sistemas de fondo para el proceso de negocio. Los mensajes que no
+coincidan con los criterios pueden ser registrados o descartarse. </p>
+		<p>Por ejemplo, los dispositivos médicos (como supervisores
+marcapasos) pueden publicar mensajes de sucesos continuamente sobre
+el estado del paciente y el dispositivo. Los mensajes de sucesos que
+contienen actualizaciones de estado regulares pueden registrarse y
+aquellos que contienen alertas de gravedad alta se pueden reenviar a
+los sistemas de proceso de negocio. </p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="Diagrama de IBM Integration Bus de IBM MessageSight."/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Tareas relacionadas</h2>
+			</div>
+			<p>Lea los apartados siguientes para obtener información sobre
+cómo aplicar y utilizar este patrón. </p>
+		</div>
+		<div>
+			<a href="constraints.htm">Restricciones en el uso del patrón</a>
+		</div>
+		<div>
+			<a href="before.htm">Tareas que deben completarse antes de aplicar el patrón</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Parámetros para el patrón</a>
+		</div>
+		<div>
+			<a href="after.htm">Tareas que deben completarse después de generar el patrón</a>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>Pattern Specification</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">IBM MessageSight Inbound Event Filter pattern</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>This pattern uses IBM Integration Bus to receive events from mobile clients via IBM MessageSight, 
+        filter the events based on specified criteria, and forward events that match the criteria to a back-end system.</p>
+
+		<p>Use this pattern when the following conditions are true:</p>
+		<ul>
+		<li>Large numbers of mobile clients are publishing messages via IBM MessageSight.</li>
+		<li>Only a subset of the messages that are published require processing by a back-end system.</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">Solution</h2>
+        </div>
+        
+		<p>If a high volume of clients publish messages via IBM MessageSight, enabling 
+		business processing for every message might overload back-end systems. By using the 
+		IBM MessageSight Inbound Event Filter pattern, only messages that match specified 
+		criteria are forwarded to the back-end systems for business processing.  Messages that do not
+		match the criteria can be logged or discarded.</p>
+		<p>For example, medical devices (such as pacemaker monitors) might continually publish event 
+		messages about the status of the patient and the device. Event messages that contain regular 
+		status updates can be logged and those that contain high severity alerts can be forwarded to 
+		the business processing systems.</p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="IBM MessageSight IBM Integration Bus integration diagram."/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Related tasks</h2>
+			</div>
+			<p>Read the following sections for information about how to apply and use 
+			this pattern.</p>
+		</div>
+		<div>
+			<a href="constraints.htm">Constraints on the use of the pattern</a>
+		</div>
+		<div>
+			<a href="before.htm">Tasks to complete before applying the pattern</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Parameters for the pattern</a>
+		</div>
+		<div>
+			<a href="after.htm">Tasks to complete after generating the pattern</a>
+		</div>
+    </body>
+</html>

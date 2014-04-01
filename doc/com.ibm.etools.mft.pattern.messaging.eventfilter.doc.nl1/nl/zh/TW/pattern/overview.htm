@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw" xml:lang="zh-tw">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>型樣規格</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">IBM MessageSight Inbound Event Filter 型樣</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>此型樣使用 IBM Integration Bus 來透過 IBM MessageSight 從行動式用戶端接收事件，基於指定的準則過濾事件，並將符合準則的事件轉遞給後端系統。</p>
+
+		<p>當滿足下列條件時使用此型樣：</p>
+		<ul>
+		<li>有大量行動式用戶端透過 IBM MessageSight 發佈訊息。</li>
+		<li>只有一小部分已發佈的訊息需要後端系統處理。</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">解決方案</h2>
+        </div>
+        
+		<p>如果大量用戶端透過 IBM MessageSight 發佈訊息，則每個訊息的商業處理可能令後端系統超載。透過使用 IBM MessageSight Inbound Event Filter 型樣，只有符合指定準則的訊息才會轉遞給後端系統，以進行商業處理。不符合準則的訊息可以記載或捨棄。</p>
+		<p>例如，醫療裝置（如起博器監視器）可能連續發佈有關病患狀態與裝置的事件訊息。包含狀態更新的事件訊息可以記載，包含高嚴重性警示的事件訊息可以轉遞給商業處理系統。</p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="IBM MessageSight IBM Integration Bus 整合圖。"/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">相關作業</h2>
+			</div>
+			<p>如需如何套用及使用此型樣的相關資訊，請閱讀下節。</p>
+		</div>
+		<div>
+			<a href="constraints.htm">使用型樣的限制</a>
+		</div>
+		<div>
+			<a href="before.htm">套用型樣之前要完成的作業</a>
+		</div>
+		<div>
+			<a href="parameters.htm">型樣的參數</a>
+		</div>
+		<div>
+			<a href="after.htm">產生型樣之後要完成的作業</a>
+		</div>
+    </body>
+</html>

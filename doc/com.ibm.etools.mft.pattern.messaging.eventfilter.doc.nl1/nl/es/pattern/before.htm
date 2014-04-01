@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="es-es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tareas que deben completarse antes de aplicar el patrón
+Filtro de sucesos de entrada de IBM MessageSight </title>
+</head>
+<body>
+    <h1 class="topictitle1">Tareas que deben completarse antes de
+aplicar el patrón <span>Filtro de sucesos de entrada de IBM
+MessageSight</span> </h1>
+    <div class="p">
+        <p class="shortdesc">Antes de aplicar el patrón para generar
+una instancia de patrón, realice los pasos siguientes:<br/></p>
+        <ul>
+        	<li>Copie los archivos JAR de cliente de IBM
+MessageSight a la máquina de IBM Integration Bus. </li>
+        	<li>Actualice el servicio configurable de IBM MessageSight
+con la ubicación de los archivos JAR de cliente de IBM MessageSight
+ejecutando el mandato siguiente en una ventana de IBM
+Integration Console:
+<p><pre>mqsichangeproperties <var>nombre_nodo</var> -c JMSProviders
+        	-o IBM_MessageSight -n jarsURL -v
+<var>ubicación_jar_cliente</var></pre>
+        	</p>
+        	<p> donde <var>nombre_nodo</var> es el nombre del nodo de
+integración (intermediario) (por ejemplo,
+<span class="filepath">IB9NODE</span>) y
+<var>ubicación_jar_cliente</var> es la vía de acceso a los archivos
+JAR de cliente de IBM MessageSight (por ejemplo,
+<span class="filepath">C:\ImaClient\jms\lib</span>).
+        	</p>
+        	</li>
+        	<li>Reinicie el nodo de integración. </li>
+        </ul>
+    </div>
+	<p>
+        
+<a href="overview.htm#anchor1" title="Volver">Volver a la
+especificación de patrón Filtro de sucesos de entrada de IBM
+MessageSight</a>
+    </p>
+</body>
+</html>

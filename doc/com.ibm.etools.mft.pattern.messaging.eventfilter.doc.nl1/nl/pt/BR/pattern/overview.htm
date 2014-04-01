@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="pt-br">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>Especificação Padrão</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Padrão Filtro de Evento de Entrada do IBM MessageSight</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Este padrão usa o IBM Integration Bus para receber eventos de clientes móveis via IBM MessageSight,
+        filtrar os eventos com base em critérios especificados e encaminhar eventos correspondentes aos critérios para um sistema backend.</p>
+
+		<p>Use este padrão quando as condições a seguir forem verdadeiras:</p>
+		<ul>
+		<li>Grandes números de clientes móveis estiverem publicando mensagens via IBM MessageSight.</li>
+		<li>Apenas um subconjunto de mensagens publicadas requererem processamento por um sistema backend.</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">Solução</h2>
+        </div>
+        
+		<p>Se um volume alto de clientes publicar mensagens via IBM MessageSight, a ativação do
+		processamento de negócios para cada mensagem poderá sobrecarregar os sistemas backend. 
+		Com o uso do padrão de Filtro de Evento de Entrada do IBM MessageSight, apenas as mensagens
+		que correspondem aos critérios especificados são encaminhadas para os sistemas backend
+  para processamento de negócios. As mensagens que não correspondem aos critérios podem
+		ser registradas ou descartadas.</p>
+		<p>Por exemplo, dispositivos médicos (como monitores de marca-passo) podem publicar mensagens
+		de evento continuamente sobre o status do paciente e do dispositivo. As mensagens de evento que
+		contêm atualizações de status regulares podem ser registradas e as que contêm alertas de severidade
+  alta podem ser encaminhadas para os sistemas de processamento de negócios.</p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="Diagrama de integração do IBM Integration Bus do IBM MessageSight."/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Tarefas Relacionadas</h2>
+			</div>
+			<p>Leia as seções a seguir para obter informações sobre como aplicar e usar esse padrão.</p>
+		</div>
+		<div>
+			<a href="constraints.htm">Restrições no uso do padrão</a>
+		</div>
+		<div>
+			<a href="before.htm">Tarefas a serem concluídas antes da aplicação do padrão</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Parâmetros do padrão</a>
+		</div>
+		<div>
+			<a href="after.htm">Tarefas a concluir após gerar o padrão</a>
+		</div>
+    </body>
+</html>

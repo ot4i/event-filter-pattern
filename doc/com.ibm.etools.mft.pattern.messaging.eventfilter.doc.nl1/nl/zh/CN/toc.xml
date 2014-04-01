@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?NLS  TYPE="org.eclipse.help.toc"?>
+<toc link_to="../com.ibm.etools.mft.pattern.worklight.dotnet.doc/toc.xml#wmb_patterns_msgsight" label="IBM MessageSight" topic="categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm">
+    <topic label="IBM MessageSight" href="categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm">
+      	<topic label="Inbound Event Filter" href="pattern/overview.htm">
+	    	<topic label="约束" href="pattern/constraints.htm"/>
+	      	<topic label="应用模式之前要完成的任务" href="pattern/before.htm"/>
+        	<topic label="参数" href="pattern/parameters.htm"/>
+	      	<topic label="生成模式之后要完成的任务" href="pattern/after.htm"/>
+      	</topic>
+      	<anchor id="wmb_patterns_msgsight2"/>  
+    </topic>
+</toc>
+
+

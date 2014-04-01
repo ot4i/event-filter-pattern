@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tarefas a Serem Concluídas após a Aplicação do Padrão de Filtro de Evento de Entrada do IBM MessageSight</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tarefas a Serem Concluídas após a Geração do Padrão <span>Filtro de Evento de Entrada do IBM MessageSight</span></h1>
+    <p class="shortdesc">As tarefas que você deve concluir após ter gerado o padrão.<br/></p>
+    <p>Após você gerar a instância padrão de Filtro de Evento de Entrada do IBM MessageSight, conclua as etapas a seguir:</p>
+
+	<ol>
+	<li>Abra o fluxo de mensagens eventFilter e identifique os comandos gerados que devem ser executados para a configuração do terminal IBM MessageSight. Execute esses comandos em sua máquina do IBM MessageSight.</li>
+	<li><b>Opcional:</b> Se quiser executar o aplicativo gerado em um nó de integração remoto (broker), conclua as seguintes etapas:<br/>
+	<ol>
+    	<li>Usando a visualização do navegador, copie o arquivo <span class="filepath">.bindings</span> gerado
+     do projeto <var>YourPatternInstanceName</var>_EventFilter na máquina do IBM Integration Bus.</li>
+    	<li>No fluxo de mensagens gerado, navegue para as propriedades do nó Entrada JMS do Assinante do Evento. 
+    	Na guia Conexão JMS, atualize a propriedade <span class="uicontrol">Ligações JNDI da Localização</span> com a localização
+     do arquivo <span class="filepath">.bindings</span>.</li>
+    </ol></li>
+    <li>Crie o gerenciador de filas, a fila que você especificou para eventos filtrados e a fila que você especificou
+    para manipulação de erros (se ela ainda não existir).</li>
+    <li>Implemente o aplicativo gerado <var>YourPatternInstanceName</var>_EventFilter em seu nó de integração.</li>
+    </ol>
+    <p>Se você aceitou os valores padrão para os parâmetros quando configurou a instância padrão, é possível usar as etapas a seguir para testar o aplicativo gerado:</p>
+    <ol>
+    <li>No navegador Desenvolvimento de Aplicativo, abra
+    <span class="uicontrol">Recursos Independentes > <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span>
+    em um navegador ativado por HTML5.</li>
+    <li>Na página do navegador, clique em <span class="uicontrol">Conectar</span> para se conectar ao terminal do IBM MessageSight.</li>
+    <li>Envie uma mensagem do evento de alerta para o IBM Integration Bus selecionando <span class="uicontrol">Alerta</span> no campo <span class="uicontrol">Tipo de Evento</span> e clicando em <span class="uicontrol">Publicar</span>.</li>
+    <li>Repita a etapa anterior várias vezes, mas selecione valores diferentes no campo <span class="uicontrol">Tipo de Evento</span>.</li>
+    <li>Verifique a fila do MQ para assegurar que as mensagens do evento de alerta (e apenas elas) estejam na fila.</li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="Voltar">Voltar à Especificação do Padrão de Filtro de Evento de Entrada do IBM MessageSight</a>
+    </p>
+</body>
+</html>
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="es-es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tareas que deben completarse después de aplicar el patrón
+Filtro de sucesos de entrada de IBM MessageSight </title>
+</head>
+<body>
+    <h1 class="topictitle1">Tareas que deben completarse después de
+generar el patrón <span>Filtro de sucesos de entrada de IBM
+MessageSight</span> </h1>
+    <p class="shortdesc">Tareas que debe completar después de haber generado el patrón.<br/></p>
+    <p>Después de generar la instancia del patrón Filtro de sucesos
+de entrada de IBM MessageSight, realice los pasos siguientes: </p>
+
+	<ol>
+	<li>Abra el flujo de mensajes eventFilter e identifique los mandatos
+generados que debe ejecutar para configurar el punto final de IBM
+MessageSight. Ejecute estos mandatos en la máquina IBM MessageSight. </li>
+	<li><b>Opcional:</b> Si desea ejecutar la aplicación generada en un
+nodo de integración remoto (intermediario), realice los pasos
+siguientes: <br/>
+	<ol>
+    	<li>Mediante la vista de navegador, copie el archivo
+<span class="filepath">.bindings</span> generado desde el proyecto
+<var>Nombre_instancia_patrón</var>_EventFilter a la máquina de IBM
+Integration Bus. </li>
+    	<li>En el flujo de mensajes generado, vaya a las propiedades del
+nodo Entrada de JMS de suscriptor de sucesos. En el separador
+Conexión de JMS, actualice la propiedad
+<span class="uicontrol">Enlaces JNDI de ubicación</span> con la
+ubicación del archivo <span class="filepath">.bindings</span>. </li>
+    </ol></li>
+    <li>Cree el gestor de colas, la cola que ha especificado para los
+sucesos filtrados y la cola que ha especificado para el manejo de
+errores (si aún no existen). </li>
+    <li>Despliegue la aplicación generada
+<var>Nombre_instancia_patrón</var>_EventFilter en el nodo de
+integración. </li>
+    </ol>
+    <p>Si ha aceptado los valores predeterminados para los parámetros
+al configurar la instancia de patrón, puede utilizar los
+pasos siguientes para probar la aplicación generada: </p>
+    <ol>
+    <li>En el navegador de Desarrollo de aplicaciones, abra
+<span class="uicontrol">Recursos independientes >
+<var>Nombre_instancia_patrón</var>_EventFilter_client
+> PacemakerClient.html</span> en un navegador habilitado para
+HTML5. </li>
+    <li>En la página del navegador, pulse
+<span class="uicontrol">Conectar</span> para conectarse al punto
+final de IBM MessageSight. </li>
+    <li>Envíe un mensaje de suceso de alerta a IBM Integration Bus
+seleccionando <span class="uicontrol">Alerta</span> en el campo
+<span class="uicontrol">Tipo de suceso</span> y pulsando
+<span class="uicontrol">Publicar</span>. </li>
+    <li>Repita el paso anterior varias veces, pero seleccione
+valores distintos del campo <span class="uicontrol">Tipo de
+suceso</span>. </li>
+    <li>Compruebe la cola de MQ para asegurarse de que los mensajes
+de suceso de alerta (y sólo estos) están
+en la cola. </li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="Volver">Volver
+a la especificación de patrón Filtro de sucesos de entrada de IBM
+MessageSight</a>
+    </p>
+</body>
+</html>
+
+

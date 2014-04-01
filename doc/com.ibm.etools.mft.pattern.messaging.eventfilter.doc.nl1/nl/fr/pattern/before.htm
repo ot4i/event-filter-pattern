@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="fr-fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tâches à effectuer avant l'application du modèle de filtre d'événement entrant IBM MessageSight </title>
+</head>
+<body>
+    <h1 class="topictitle1">Tâches à effectuer avant l'application du modèle <span>Filtre d'événement entrant IBM MessageSight</span> </h1>
+    <div class="p">
+        <p class="shortdesc">Avant d'appliquer le modèle permettant de produire une instance du modèle, procédez comme suit :<br/></p>
+        <ul>
+        	<li>Copiez les fichiers JAR du client IBM MessageSight sur votre machine IBM Integration Bus.</li>
+        	<li>Mettez à jour le service configurable IBM MessageSight avec l'emplacement des fichiers JAR du client IBM MessageSight en exécutant la commande suivante dans une fenêtre de la console IBM Integration :
+        	<p><pre>mqsichangeproperties <var>node_name</var> -c JMSProviders 
+        	-o IBM_MessageSight -n jarsURL -v <var>client_jar_location</var></pre>
+        	</p>
+        	<p> où <var>node_name</var> correspond au nom de votre noeud d'intégration (courtier) (par exemple,
+        	<span class="filepath">IB9NODE</span>) et <var>client_jar_location</var> au chemin des fichiers JAR de votre client IBM MessageSight (par exemple,   <span class="filepath">C:\ImaClient\jms\lib</span>).
+        	</p>
+        	</li>
+        	<li>Redémarrez le noeud d'intégration. </li>
+        </ul>
+    </div>
+	<p>
+        <a href="overview.htm#anchor1" title="Retour">Spécification du modèle Filtre d'événement entrant IBM MessageSight</a>
+    </p>
+</body>
+</html>

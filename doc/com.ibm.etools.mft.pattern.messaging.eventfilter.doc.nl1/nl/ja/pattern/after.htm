@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>「IBM MessageSight インバウンド・イベント・フィルター」パターンを適用した後に完了するタスク</title>
+</head>
+<body>
+    <h1 class="topictitle1"><span>「IBM MessageSight インバウンド・イベント・フィルター」</span>パターンを生成した後に完了するタスク</h1>
+    <p class="shortdesc">パターンを生成した後に完了する必要があるタスクです。<br/></p>
+    <p>「IBM MessageSight インバウンド・イベント・フィルター」パターン・インスタンスを生成した後、以下のステップを実行します。</p>
+
+	<ol>
+	<li>eventFilter メッセージ・フローを開いて、IBM MessageSight エンドポイントを構成するために実行する必要のある生成済みコマンドを識別します。
+IBM MessageSight マシン上でこれらのコマンドを実行してください。</li>
+	<li><b>オプション:</b> 生成済みアプリケーションをリモート統合ノード (ブローカー) 上で実行する場合、以下のステップを実行します。<br/>
+	<ol>
+    	<li>ナビゲーター・ビューを使用して、生成済みの <span class="filepath">.bindings</span> ファイルを <var>YourPatternInstanceName</var>_EventFilter プロジェクトから IBM Integration Bus マシンにコピーします。</li>
+    	<li>生成済みメッセージ・フローの中で、イベント・サブスクライバー JMS Input ノード・プロパティーまでナビゲートします。
+JMS 接続タブで、<span class="uicontrol">「ロケーション JNDI バインディング」</span>プロパティーを <span class="filepath">.bindings</span> ファイルの場所に基づいて更新します。</li>
+    </ol></li>
+    <li>キュー・マネージャー、フィルター対象イベント用に指定したキュー、およびエラー処理用に指定したキューを作成します (これらがまだ存在しない場合)。</li>
+    <li>生成済みアプリケーション <var>YourPatternInstanceName</var>_EventFilter を統合ノードにデプロイします。</li>
+    </ol>
+    <p>パターン・インスタンスを構成したときにパラメーターのデフォルト値を受け入れた場合、以下のステップに従って生成済みアプリケーションをテストできます。</p>
+    <ol>
+    <li>アプリケーション開発ナビゲーターから、<span class="uicontrol">「独立リソース」> <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span> を HTML5 対応ブラウザーで開きます。</li>
+    <li>ブラウザー・ページで<span class="uicontrol">「接続」</span>をクリックして、IBM MessageSight エンドポイントに接続します。</li>
+    <li><span class="uicontrol">「イベント・タイプ」</span>フィールドから<span class="uicontrol">「アラート」</span>を選択して<span class="uicontrol">「パブリッシュ」</span>をクリックすることにより、アラート・イベント・メッセージを IBM Integration Bus に送ります。</li>
+    <li>上記の手順を何度か繰り返します。ただし、<span class="uicontrol">「イベント・タイプ」</span>フィールドで異なる値を選択します。</li>
+    <li>MQ キューを調べて、キューの中にアラート・イベント・メッセージが存在する (かつ、アラート・イベント・メッセージ以外は存在しない) ことを確認します。</li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="戻る">「IBM MessageSight インバウンド・イベント・フィルター」パターンの仕様に戻る</a>
+    </p>
+</body>
+</html>
+
+

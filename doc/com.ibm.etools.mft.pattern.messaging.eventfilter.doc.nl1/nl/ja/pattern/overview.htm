@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>パターン仕様</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">「IBM MessageSight インバウンド・イベント・フィルター」パターン</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>このパターンは、IBM Integration Bus を使用することによって、IBM MessageSight を介してモバイル・クライアントからイベントを受信し、指定された基準に基づいてイベントをフィルターに掛けて、基準に一致するイベントをバックエンド・システムに転送します。</p>
+
+		<p>以下の条件に該当する場合は、このパターンを使用します。</p>
+		<ul>
+		<li>IBM MessageSight を介して多数のモバイル・クライアントがメッセージをパブリッシュする。</li>
+		<li>パブリッシュされるメッセージのサブセットだけが、バックエンド・システムで処理される必要がある。</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">ソリューション</h2>
+        </div>
+        
+		<p>多数のクライアントが IBM MessageSight を介してメッセージをパブリッシュする場合、すべてのメッセージに対するビジネス処理を有効にすると、バックエンド・システムが過負荷になる可能性があります。
+「IBM MessageSight インバウンド・イベント・フィルター」パターンを使用すると、指定された基準に一致するメッセージだけがバックエンド・システムに転送され、ビジネス処理されます。
+基準に一致しないメッセージについては、ログに記録するか、破棄することができます。</p>
+		<p>例えば医療機器 (ペースメーカー・モニターなど) は、患者や装置の状態に関するイベント・メッセージを常にパブリッシュし続ける可能性があります。
+状態の正常な更新が入ったイベント・メッセージはログに記録し、重大度の高いアラートが入っているイベント・メッセージをビジネス処理システムに転送することができます。</p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="IBM MessageSight IBM Integration Bus 統合図。"/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">関連タスク</h2>
+			</div>
+			<p>このパターンを適用して使用する方法については、以下のセクションをお読みください。</p>
+		</div>
+		<div>
+			<a href="constraints.htm">パターンの使用に関する制約</a>
+		</div>
+		<div>
+			<a href="before.htm">パターンを適用する前に完了するタスク</a>
+		</div>
+		<div>
+			<a href="parameters.htm">パターンのパラメーター</a>
+		</div>
+		<div>
+<a href="after.htm">パターンを生成した後に完了するタスク</a></div>
+    </body>
+</html>

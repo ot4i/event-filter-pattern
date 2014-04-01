@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="fr-fr">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>Spécification de modèle</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Modèle de filtre d'événement entrant IBM MessageSight </h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Ce modèle utilise IBM Integration Bus pour recevoir des événements de clients mobiles via IBM MessageSight,
+        filtre les événements en fonction de critères spécifiés et transfère des événements correspondant aux critères à un système expéditeur. </p>
+
+		<p>Utilisez ce modèle lorsque les conditions suivantes sont remplies :</p>
+		<ul>
+		<li>Un grand nombre de clients mobiles publient des messages via IBM MessageSight.</li>
+		<li>Seul un sous-ensemble de messages publiés nécessite un traitement par un système expéditeur. </li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">Solution</h2>
+        </div>
+        
+		<p>Si un grand nombre de clients publient des messages via IBM MessageSight, l'activation
+		d'un processus métier pour chaque message risque de surcharger les systèmes expéditeurs. L'utilisation du modèle
+		IBM MessageSight Inbound Event Filter permet de ne transférer aux systèmes expéditeurs en vue d'un processus métier que les messages correspondant aux critères spécifiés. Les messages qui ne correspondent pas aux critères peuvent être consignés ou annulés. </p>
+		<p>Par exemple, des dispositifs médicaux (tels que des moniteurs de stimulateur cardiaque) peuvent publier en permanence des messages d'événement sur le statut
+		d'un patient et le dispositif. Les messages d'événement contenant des mises à jour de statut régulières
+		peuvent être consignés et ceux contenant des alertes de niveau de gravité élevé peuvent être transférés aux systèmes de processus métier. </p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="Diagramme d'intégration IBM MessageSight IBM Integration Bus."/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Tâches connexes</h2>
+			</div>
+			<p>Pour plus d'informations sur l'application et l'utilisation de ce modèle, consultez les sections suivantes.</p>
+		</div>
+		<div>
+			<a href="constraints.htm">Contraintes d'utilisation du modèle</a>
+		</div>
+		<div>
+			<a href="before.htm">Tâches à exécuter avant d'appliquer le modèle</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Paramètres destinés au modèle</a>
+		</div>
+		<div>
+			<a href="after.htm">Tâches à exécuter après avoir généré le modèle</a>
+		</div>
+    </body>
+</html>

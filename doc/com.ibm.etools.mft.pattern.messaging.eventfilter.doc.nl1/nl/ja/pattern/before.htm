@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-jp" xml:lang="ja-jp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>「IBM MessageSight インバウンド・イベント・フィルター」パターンを適用する前に完了するタスク</title>
+</head>
+<body>
+    <h1 class="topictitle1"><span>「IBM MessageSight インバウンド・イベント・フィルター」</span>パターンを適用する前に完了するタスク</h1>
+    <div class="p">
+        <p class="shortdesc">パターン・インスタンスの生成のためにパターンを適用する前に、以下のステップを実行します。<br/></p>
+        <ul>
+        	<li>IBM MessageSight クライアント JAR ファイルを IBM Integration Bus マシンにコピーします。</li>
+        	<li>IBM Integration Console ウィンドウで以下のコマンドを実行することにより、IBM MessageSight	クライアント JAR ファイルの場所に基づいて IBM MessageSight 構成可能サービスを更新します。
+<p><pre>mqsichangeproperties <var>node_name</var> -c JMSProviders 
+        	-o IBM_MessageSight -n jarsURL -v <var>client_jar_location</var></pre>
+        	</p>
+        	<p> ここで、<var>node_name</var> は統合ノード (ブローカー) の名前 (例えば	<span class="filepath">IB9NODE</span>)、<var>client_jar_location</var> は IBM MessageSight クライアント JAR ファイルのパス (例えば <span class="filepath">C:\ImaClient\jms\lib</span>) です。
+        	</p>
+        	</li>
+        	<li>統合ノードを再始動します。</li>
+        </ul>
+    </div>
+	<p>
+        <a href="overview.htm#anchor1" title="戻る">「IBM MessageSight インバウンド・イベント・フィルター」パターンの仕様に戻る</a>
+    </p>
+</body>
+</html>

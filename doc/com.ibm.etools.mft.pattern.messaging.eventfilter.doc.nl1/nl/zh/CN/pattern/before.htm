@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>应用 IBM MessageSight Inbound Event Filter 模式之前要完成的任务</title>
+</head>
+<body>
+    <h1 class="topictitle1">应用 <span>IBM MessageSight Inbound Event Filter</span> 模式之前要完成的任务</h1>
+    <div class="p">
+        <p class="shortdesc">在应用该模式以生成模式实例之前，请完成下列任务：<br/></p>
+        <ul>
+        	<li>将 IBM MessageSight 客户机 JAR 文件复制到 IBM Integration Bus 机器。</li>
+        	<li>通过在 IBM Integration Console 窗口中运行下列命令，用 IBM MessageSight 客户机 JAR 文件的位置更新 IBM MessageSight 可配置服务：<p><pre>mqsichangeproperties <var>node_name</var> -c JMSProviders 
+        	-o IBM_MessageSight -n jarsURL -v <var>client_jar_location</var></pre>
+        	</p>
+        	<p> 其中 <var>node_name</var> 是集成节点（代理）名称（例如 <span class="filepath">IB9NODE</span>），<var>client_jar_location</var> 是到	IBM MessageSight 客户机 JAR 文件的路径（例如 <span class="filepath">C:\ImaClient\jms\lib</span>）。
+        	</p>
+        	</li>
+        	<li>重新启动集成节点。</li>
+        </ul>
+    </div>
+	<p>
+        <a href="overview.htm#anchor1" title="返回">返回至 IBM MessageSight Inbound Event Filter 模式规范</a>
+    </p>
+</body>
+</html>

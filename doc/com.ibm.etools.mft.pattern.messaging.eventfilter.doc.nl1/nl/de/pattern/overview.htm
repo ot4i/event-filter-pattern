@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-de" xml:lang="de-de">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	    <meta name="copyright" content="Copyright IBM Corporation 2013"/>
+	    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+	    <!-- 
+	    (C) COPYRIGHT International Business Machines Corp., 2013
+	    All Rights Reserved * Licensed Materials - Property of IBM
+	    -->
+        <title>Musterspezifikation</title>
+    </head>
+    <body>
+        <h1 class="topictitle1">Muster 'IBM MessageSight Inbound Event Filter'</h1>
+        <div>
+            <p class="shortdesc"></p>
+        </div>
+        <p>Dieses Muster verwendet IBM Integration Bus für den Empfang von Ereignissen aus mobilen Clients über IBM MessageSight sowie zum Filtern der Ereignisse auf Basis bestimmter Kriterien und zur Weiterleitung von Ereignissen, die den Kriterien entsprechen, an ein Back-End-System.
+</p>
+
+		<p>Verwenden Sie dieses Muster, wenn die folgenden Bedingungen zutreffen:</p>
+		<ul>
+		<li>Sehr viele mobile Clients veröffentlichen Nachrichten über IBM MessageSight.</li>
+		<li>Nur eine Teilmenge der veröffentlichten Nachrichten erfordert die Verarbeitung durch ein Back-End-System.</li>
+    	</ul>    
+        <div class="section">
+            <h2 class="sectiontitle">Lösung</h2>
+        </div>
+        
+		<p>Wenn sehr viele Clients Nachrichten über IBM MessageSight veröffentlichen, besteht die Gefahr, dass die Back-End-Systeme durch die Aktivierung der Geschäftsprozessverarbeitung für jede Nachricht überlastet werden. Bei Verwendung des Musters 'IBM MessageSight Inbound Event Filter' werden nur Nachrichten, die bestimmten Kriterien entsprechen, an die Back-End-Systeme für die Geschäftsprozessverarbeitung weitergeleitet. Nachrichten, die die Kriterien nicht erfüllen, können protokolliert oder verworfen werden. </p>
+		<p>Manche medizinische Geräte (zum Beispiel Überwachungsgeräte von Schrittmachern) veröffentlichen möglicherweise fortlaufend Ereignisnachrichten zum Zustand des Patienten und des Geräts. Ereignisnachrichten, die regelmäßige Statusaktualisierungen enthalten, können protokolliert werden, während Nachrichten mit Alerts hoher Dringlichkeit an die Geschäftsprozesssysteme weitergeleitet werden können. </p>
+		
+		<div class="image">
+        <img src="../images/InboundFilter.gif" alt="Diagramm mit IBM MessageSight IBM Integration Bus-Integration."/>
+    	</div>
+
+		<div class="familylinks">
+			<a name="anchorBack"></a>
+			<div class="section">
+				<h2 class="sectiontitle">Verwandte Tasks</h2>
+			</div>
+			<p>In den folgenden Abschnitten finden Sie Informationen zur Anwendung und Verwendung dieses Musters.
+</p>
+		</div>
+		<div>
+			<a href="constraints.htm">Einschränkungen bei der Verwendung des Musters</a>
+		</div>
+		<div>
+			<a href="before.htm">Erforderliche Tasks vor der Anwendung des Musters</a>
+		</div>
+		<div>
+			<a href="parameters.htm">Parameter für das Muster</a>
+		</div>
+		<div>
+			<a href="after.htm">Erforderliche Tasks nach der Generierung des Musters</a>
+		</div>
+    </body>
+</html>

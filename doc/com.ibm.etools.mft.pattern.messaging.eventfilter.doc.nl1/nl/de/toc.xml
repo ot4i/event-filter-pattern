@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?NLS  TYPE="org.eclipse.help.toc"?>
+<toc link_to="../com.ibm.etools.mft.pattern.worklight.dotnet.doc/toc.xml#wmb_patterns_msgsight" label="IBM MessageSight" topic="categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm">
+    <topic label="IBM MessageSight" href="categories/Id13e1237d9d5444112c7f0ad8e88/overview.htm">
+      	<topic label="Filter für eingehende Ereignisse" href="pattern/overview.htm">
+	    	<topic label="Vorgaben" href="pattern/constraints.htm"/>
+	      	<topic label="Erforderliche Tasks vor der Anwendung des Musters" href="pattern/before.htm"/>
+        	<topic label="Parameter" href="pattern/parameters.htm"/>
+	      	<topic label="Erforderliche Tasks nach der Generierung des Musters" href="pattern/after.htm"/>
+      	</topic>
+      	<anchor id="wmb_patterns_msgsight2"/>  
+    </topic>
+</toc>
+
+

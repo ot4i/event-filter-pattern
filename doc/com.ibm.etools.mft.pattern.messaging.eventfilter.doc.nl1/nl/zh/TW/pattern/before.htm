@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw" xml:lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>套用 IBM MessageSight Inbound Event Filter 型樣之前要完成的作業</title>
+</head>
+<body>
+    <h1 class="topictitle1">套用 <span>IBM MessageSight Inbound Event Filter</span> 型樣之前要完成的作業</h1>
+    <div class="p">
+        <p class="shortdesc">在套用型樣以產生型樣實例之前，請完成下列步驟：<br/></p>
+        <ul>
+        	<li>將 IBM MessageSight 用戶端 JAR 檔複製到 IBM Integration Bus 機器。</li>
+        	<li>將 IBM MessageSight 可配置服務更新為 IBM MessageSight 用戶端 JAR 檔的位置，在 IBM Integration Console 視窗中執行下列指令：<p><pre>mqsichangeproperties <var>node_name</var> -c JMSProviders 
+        	-o IBM_MessageSight -n jarsURL -v <var>client_jar_location</var></pre>
+        	</p>
+        	<p> 其中，<var>node_name</var> 是您的整合節點（分配管理系統）名稱（例如，<span class="filepath">IB9NODE</span>），<var>client_jar_location</var> 是您的	IBM MessageSight 用戶端 JAR 檔的路徑（例如，<span class="filepath">C:\ImaClient\jms\lib</span>）。
+        	</p>
+        	</li>
+        	<li>重新啟動整合節點。</li>
+        </ul>
+    </div>
+	<p>
+        <a href="overview.htm#anchor1" title="上一步">回到 IBM MessageSight Inbound Event Filter 型樣規格</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-de" xml:lang="de-de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tasks, die nach der Anwendung des Musters 'IBM MessageSight Inbound Event Filter' ausgeführt werden müssen</title>
+</head>
+<body>
+    <h1 class="topictitle1">Tasks, die nach der Generierung des Musters <span>IBM MessageSight Inbound Event Filter</span> ausgeführt werden müssen</h1>
+    <p class="shortdesc">Tasks, die Sie nach der Generierung des Musters ausführen müssen.<br/></p>
+    <p>Führen Sie nach der Generierung der Musterinstanz 'IBM MessageSight Inbound Event Filter' die folgenden Schritte aus:</p>
+
+	<ol>
+	<li>Öffnen Sie den Nachrichtenfluss 'eventFilter' und ermitteln Sie die generierten Befehle, die Sie für die Konfiguration des IBM MessageSight-Endpunkts ausführen müssen. Führen Sie diese Befehle auf Ihrer IBM MessageSight-Maschine aus.</li>
+	<li><b>Optional:</b> Wenn Sie die generierte Anwendung auf einem fernen Integrationsknoten (Broker) ausführen möchten, führen Sie die folgenden Schritte aus:
+<br/>
+	<ol>
+    	<li>Kopieren Sie unter Verwendung der Navigatoransicht die generierte Datei mit der Erweiterung <span class="filepath">.bindings</span> aus dem Projekt <var>Musterinstanzname</var>_EventFilter auf Ihre IBM Integration Bus-Maschine.</li>
+    	<li>Navigieren Sie im generierten Nachrichtenfluss zu den Eigenschaften des JMS-Empfangsknotens 'Event Subscriber'. Aktualisieren Sie auf der Registerkarte für die JMS-Verbindung die Eigenschaft <span class="uicontrol">Location JNDI Bindings</span> (Speicherposition der JNDI-Bindungen) mit der Speicherposition der Datei mit der Erweiterung <span class="filepath">.bindings</span>.</li>
+    </ol></li>
+    <li>Erstellen Sie den Warteschlangenmanager, die von Ihnen für gefilterte Ereignisse angegebene Warteschlange und die Warteschlange, die Sie für die Fehlerbehandlung angegeben haben (falls diese noch nicht vorhanden ist).
+</li>
+    <li>Implementieren Sie die generierte Anwendung <var>Musterinstanzname</var>_EventFilter auf Ihrem Integrationsknoten. </li>
+    </ol>
+    <p>Wenn Sie bei der Konfiguration der Musterinstanz die Standardwerte für die Parameter akzeptiert haben, können Sie die generierte Anwendung mit folgenden Schritten testen:
+</p>
+    <ol>
+    <li>Öffnen Sie im Navigator der Anwendungsentwicklung über <span class="uicontrol">Independent Resources > <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span> (Unabhängige Ressourcen > Musterinstanzname_EventFilter_client PacemakerClient.html) die Datei in einem HTML5-fähigen Browser. </li>
+    <li>Klicken Sie auf der Browserseite auf <span class="uicontrol">Connect</span> (Verbinden), um eine Verbindung zum IBM MessageSight-Endpunkt herzustellen.</li>
+    <li>Senden Sie eine Alertereignisnachricht an IBM Integration Bus, indem Sie im Feld <span class="uicontrol">Event Type</span> (Ereignistyp) den Eintrag <span class="uicontrol">Alert</span> auswählen und auf <span class="uicontrol">Publish</span> (Veröffentlichen) klicken.</li>
+    <li>Wiederholen Sie den obigen Schritt mehrmals, wählen Sie dabei jedoch im Feld <span class="uicontrol">Event Type</span> (Ereignistyp) andere Werte aus.</li>
+    <li>Überprüfen Sie die MQ-Warteschlange, um sicherzustellen, dass sich die Alertereignisnachrichten (und nur die Alertereignisnachrichten) in der Warteschlange befinden.
+</li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="Zurück">Zurück zur Spezifikation des Musters 'IBM MessageSight Inbound Event Filter'</a>
+    </p>
+</body>
+</html>
+
+

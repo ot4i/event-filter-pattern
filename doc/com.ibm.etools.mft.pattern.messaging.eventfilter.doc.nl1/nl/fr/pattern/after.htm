@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="fr-fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="copyright" content="Copyright IBM Corporation 2012"/>
+    <link rel="stylesheet" type="text/css" href="./css/pattern.css"/>
+    <!-- 
+    (C) COPYRIGHT International Business Machines Corp., 2012
+    All Rights Reserved * Licensed Materials - Property of IBM
+    -->
+    <title>Tâches à effectuer après l'application du modèle de filtre d'événement entrant IBM MessageSight </title>
+</head>
+<body>
+    <h1 class="topictitle1">Tâches à effectuer après avoir généré le modèle <span>Filtre d'événement entrant IBM MessageSight</span> </h1>
+    <p class="shortdesc">Tâches que vous devez exécuter après avoir généré le modèle.<br/></p>
+    <p>Après avoir généré l'instance de modèle Filtre d'événement entrant IBM MessageSight, procédez comme suit :</p>
+
+	<ol>
+	<li>Ouvrez le flux de messages eventFilter et identifiez les commandes générées que vous devez exécuter pour configurer le noeud final IBM MessageSight. Exécutez ces commandes sur votre machine IBM MessageSight.</li>
+	<li><b>Facultatif :</b> Si vous souhaitez exécuter l'application générée sur un noeud d'intégration distant (courtier), procédez comme suit :<br/>
+	<ol>
+    	<li>A l'aide de la vue Navigateur, copiez le fichier <span class="filepath">.bindings</span> généré
+    	du projet <var>YourPatternInstanceName</var>_EventFilter vers votre machine IBM Integration Bus.</li>
+    	<li>Dans le flux de messages généré, accédez aux propriétés du noeud Event Subscriber JMS Input. 
+    	Dans l'onglet Connexion JMS, mettez à jour la propriété <span class="uicontrol">Liaisons JNDI d'emplacement</span> avec l'emplacement du fichier
+    	<span class="filepath">.bindings</span>.</li>
+    </ol></li>
+    <li>Créez le gestionnaire de files d'attente, la file d'attente spécifiée pour les événements filtrés et la file d'attente spécifiée pour le traitement d'erreurs (si elles n'existent pas déjà). </li>
+    <li>Déployez l'application générée <var>YourPatternInstanceName</var>_EventFilter sur votre noeud d'intégration. </li>
+    </ol>
+    <p>Si vous avez accepté les valeurs par défaut pour les paramètres lors de la configuration de l'instance de modèle, vous pouvez utiliser les étapes suivantes
+    pour tester l'application générée : </p>
+    <ol>
+    <li>Dans le navigateur de développement d'application,
+    ouvrez <span class="uicontrol">Ressources indépendantes > <var>YourPatternInstanceName</var>_EventFilter_client > PacemakerClient.html</span>
+    dans un navigateur compatible HTML5.</li>
+    <li>Sur la page du navigateur, cliquez sur <span class="uicontrol">Connexion</span> pour vous connecter au noeud final IBM MessageSight.</li>
+    <li>Envoyez un message d'événement d'alerte à IBM Integration Bus en sélectionnant <span class="uicontrol">Alerte</span> dans la zone <span class="uicontrol">Type d'événement</span> et en cliquant sur <span class="uicontrol">Publish</span>.</li>
+    <li>Répétez l'étape précédente plusieurs fois, mais en sélectionnant différentes valeurs dans la zone <span class="uicontrol">Type d'événement</span>.</li>
+    <li>Consultez la file d'attente MQ afin de vous assurer que les messages d'événement d'alerte (et uniquement ces messages) sont dans la file d'attente. </li>
+    </ol>
+    <br/>
+
+    
+    <p>
+        <a href="overview.htm#anchor1" title="Retour">Spécification du modèle Filtre d'événement entrant IBM MessageSight</a>
+    </p>
+</body>
+</html>
+
+
