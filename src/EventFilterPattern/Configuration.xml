@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <capture:plugins>
     <modelVersion>1.0.0.0</modelVersion>
-    <plugin pluginLocale="en-GB" pluginPath="com/ibm/etools/mft/pattern/messaging/eventfilter" pluginRootRelativePath="/" pluginRootAbsolutePath="C:/bt_workspace/S000-L120823_D/" pluginName="com.ibm.etools.mft.pattern.messaging.eventfilter" docPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.doc" nlsPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsDocPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1" pluginRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter" pluginAbsolutePath="C:/bt_workspace/S000-L120823_D/com.ibm.etools.mft.pattern.messaging.eventfilter" docRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.doc" docAbsolutePath="C:/bt_workspace/S000-L120823_D/com.ibm.etools.mft.pattern.messaging.eventfilter.doc" nlsRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsAbsolutePath="C:/bt_workspace/S000-L120823_D/com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsDocRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1" nlsDocAbsolutePath="C:/bt_workspace/S000-L120823_D/com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1">
+    <plugin pluginLocale="en-GB" pluginPath="com/ibm/etools/mft/pattern/messaging/eventfilter" pluginRootRelativePath="/" pluginRootAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/" pluginName="com.ibm.etools.mft.pattern.messaging.eventfilter" docPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.doc" nlsPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsDocPluginName="com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1" pluginRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter" pluginAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/com.ibm.etools.mft.pattern.messaging.eventfilter" docRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.doc" docAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/com.ibm.etools.mft.pattern.messaging.eventfilter.doc" nlsRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/com.ibm.etools.mft.pattern.messaging.eventfilter.nl1" nlsDocRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1" nlsDocAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/com.ibm.etools.mft.pattern.messaging.eventfilter.doc.nl1">
         <pluginId>Id13d685468be20b36d5bc36446dd</pluginId>
         <displayName>Pattern Plug-in</displayName>
         <package>com.ibm.etools.mft.pattern.messaging.eventfilter</package>
         <description>Event Filter Pattern for use with IBM MessageSight</description>
-        <version>9.0.0.qualifier</version>
+        <version>1.0.0.0</version>
         <provider>IBM</provider>
         <categories>
             <category categoryKey="categories_Id13e1237d9d5444112c7f0ad8e88" categoryPath="categories/Id13e1237d9d5444112c7f0ad8e88" categoryResourcesPath="../.." categoryTemplatePath="categories/Id13e1237d9d5444112c7f0ad8e88">
@@ -51,7 +51,7 @@
             </category>
         </categories>
         <patterns>
-            <pattern patternKey="com_ibm_etools_mft_pattern_messaging_eventfilter_pattern" patternPath="com/ibm/etools/mft/pattern/messaging/eventfilter/pattern" resourcesPath=".." patternTemplatePath="pattern" patternRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter" patternAbsolutePath="C:/bt_workspace/S000-L120823_D/com.ibm.etools.mft.pattern.messaging.eventfilter">
+            <pattern patternKey="com_ibm_etools_mft_pattern_messaging_eventfilter_pattern" patternPath="com/ibm/etools/mft/pattern/messaging/eventfilter/pattern" resourcesPath=".." patternTemplatePath="pattern" patternRelativePath="/com.ibm.etools.mft.pattern.messaging.eventfilter" patternAbsolutePath="C:/temp/tmp1404/event-filter-pattern-build/com.ibm.etools.mft.pattern.messaging.eventfilter">
                 <patternId>Id13d685468cc32717bbe4597ea7</patternId>
                 <package>com.ibm.etools.mft.pattern.messaging.eventfilter.pattern</package>
                 <parentPackage>categories.Id13e1237d9d5444112c7f0ad8e88</parentPackage>
@@ -60,7 +60,7 @@
                 <schema/>
                 <referencedProjects>
                     <referencedProject>
-                        <referencedProjectId>Id13e31a7498379a8976d6e8d18da</referencedProjectId>
+                        <referencedProjectId>Id145241907de7a7fa5019c47aefe</referencedProjectId>
                         <displayName>EventFilter</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -96,6 +96,7 @@
                                                     <minOccurs>0</minOccurs>
                                                     <type>xsd:string</type>
                                                 </schema>
+                                                <editorId>com.ibm.etools.mft.ibmnodes.editors.mq.MQOutputQueueManagerEditor</editorId>
                                             </target>
                                             <target>
                                                 <targetId>EventFilter.eventFilter.MQ_Event_Processing.queueName</targetId>
@@ -109,6 +110,7 @@
                                                     <minOccurs>0</minOccurs>
                                                     <type>xsd:string</type>
                                                 </schema>
+                                                <editorId>com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor</editorId>
                                             </target>
                                         </targets>
                                     </file>
@@ -155,6 +157,7 @@
                                                             <minOccurs>0</minOccurs>
                                                             <type>xsd:string</type>
                                                         </schema>
+                                                        <editorId>com.ibm.etools.mft.ibmnodes.editors.mq.MQOutputQueueManagerEditor</editorId>
                                                     </target>
                                                     <target>
                                                         <targetId>EventFilter.mqsi.Error.Error_Output.queueName</targetId>
@@ -168,6 +171,7 @@
                                                             <minOccurs>0</minOccurs>
                                                             <type>xsd:string</type>
                                                         </schema>
+                                                        <editorId>com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor</editorId>
                                                     </target>
                                                 </targets>
                                             </file>
@@ -179,7 +183,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id13e31a74a711d31d00d0973e42b</referencedProjectId>
+                        <referencedProjectId>Id145241908d59e58bc7e25e07d2a</referencedProjectId>
                         <displayName>EventFilter_client</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -237,7 +241,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id13e31a74a71d7c2efcc8f85994e</referencedProjectId>
+                        <referencedProjectId>Id145241908d5d6628c30b2e05430</referencedProjectId>
                         <displayName>EventFilter_logs</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -564,7 +568,7 @@
                 <patternExtensions>
                     <packageExtensions>
                         <packageExtension>
-                            <extensionId>Id13e31aceae1939e9a8684f407a4</extensionId>
+                            <extensionId>Id1452423518755862fb28b20c004</extensionId>
                             <extensionClass>com.ibm.etools.mft.pattern.support.edit.pattern.PackagePatternEditorTransform</extensionClass>
                             <extensionConfiguration/>
                         </packageExtension>
@@ -632,24 +636,6 @@
                             <relativePath></relativePath>
                             <enabled>true</enabled>
                             <files>
-                                <file>
-                                    <fileName>after.htm</fileName>
-                                    <relativePath>after.htm</relativePath>
-                                    <enabled>true</enabled>
-                                    <targets/>
-                                </file>
-                                <file>
-                                    <fileName>before.htm</fileName>
-                                    <relativePath>before.htm</relativePath>
-                                    <enabled>true</enabled>
-                                    <targets/>
-                                </file>
-                                <file>
-                                    <fileName>constraints.htm</fileName>
-                                    <relativePath>constraints.htm</relativePath>
-                                    <enabled>true</enabled>
-                                    <targets/>
-                                </file>
                                 <file>
                                     <fileName>overview.htm</fileName>
                                     <relativePath>overview.htm</relativePath>
